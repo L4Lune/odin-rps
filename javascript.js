@@ -3,8 +3,8 @@
 // Return Rock, Paper, or Scissors based off the random number conditional
 
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3)
-   switch(randomNumber) {
+    let choice = Math.floor(Math.random() * 3)
+   switch(choice) {
     case 0:
         return "rock"
         break;
@@ -18,35 +18,45 @@ function getComputerChoice() {
 }
 
 // Create a function that plays a single round of Rock, Paper, Scissors
-// Get the user input and store that value in a variable playSelection
+// Get the user input and store that value in a variable playerSelection
 // Get the computers choice and store that value in a variable computerSelection
 // Create a conditional AND statement for all possible combinations of result and print a comment to the console
 
 function playRound(playerSelection, computerSelection) {
-    const playerSelection = prompt("What are you throwing? ");
+
     let playerSelectionLower = playerSelection.toLowerCase();
-    const computerSelection = getComputerChoice();
 
     if (playerSelectionLower === "rock" && computerSelection === "rock") {
-        console.log("It's a tie!");
+        return("It's a tie!");
     } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
-        console.log("You Lose! Paper beats Rock!");
+        return("You Lose! Paper beats Rock!");
     } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
-        console.log("You Win! Rock beats Scissors!");
+        return("You Win! Rock beats Scissors!");
     } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
-        console.log("You Win! Paper covers Rock!");
+        return("You Win! Paper covers Rock!");
     } else if (playerSelectionLower === "paper" && computerSelection === "paper") {
-        console.log("It's a tie!");
+        return("It's a tie!");
     } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
-        console.log("You Lose! Scissors cut Paper");
+        return("You Lose! Scissors cut Paper");
     } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
-        console.log("You Lose! Rock crushes Scissors!");
+        return("You Lose! Rock crushes Scissors!");
     } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
-        console.log("You Win! Scissors cut Paper!");
+        return("You Win! Scissors cut Paper!");
     } else if (playerSelectionLower === "scissors" && computerSelection === "scissors")
-    console.log("It's a tie!");
+        return("It's a tie!");
 }
 
 // Create a function called game()
 // Call playRound() inside of game()
 // Create an iterative loop that plays a total of five games
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Rock, Paper, or Scissors?");
+        let computerSelection = getComputerChoice();
+        console.log(computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+game();
