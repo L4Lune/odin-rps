@@ -20,11 +20,10 @@ function getComputerSelection() {
 function getPlayerSelection() {
     const buttons = document.querySelectorAll('button');
     let playerSelection = buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            console.log(button.id);
+        button.addEventListener('click', playRound);
         })
-    })
-}
+    }
+
 
 function playRound(playerSelection, computerSelection) {
     let playerSelectionLower = playerSelection.toLowerCase();
@@ -84,8 +83,6 @@ function declareOutcome() {
 }
 
 function game() {
-
-
 
         let playerSelection = getPlayerSelection();
         let computerSelection = getComputerSelection();
