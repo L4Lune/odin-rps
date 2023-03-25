@@ -17,15 +17,24 @@ function getComputerSelection() {
     }
 }
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', playround(button.id, getComputerSelection()) => {
+        console.log(button.id);
+    });
+});
+
+
 function getPlayerSelection() {
-    const buttons = document.querySelectorAll('button');
     let playerSelection = buttons.forEach((button) => {
-        button.addEventListener('click', playRound);
-        })
+        button.addEventListener('click', playRound)
+            console.log(playerSelection);
+    return playerSelection;
+    });
     }
 
 function playRound(playerSelection, computerSelection) {
-    
+
     results = '';
     if (playerSelection === "rock" && computerSelection === "rock") {
         results = "It's a tie!";
@@ -54,6 +63,8 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "scissors" && computerSelection === "scissors")
         results = "It's a tie!";
         return results;
+    console.log(results);
+    
 }
 
 function keepScore(results) {
@@ -94,7 +105,3 @@ function game() {
         keepScore(results);
     }
     declareOutcome();
-
-
-
-game();
