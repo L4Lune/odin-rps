@@ -18,8 +18,12 @@ function getComputerSelection() {
 }
 
 function getPlayerSelection() {
-    let playerSelection = prompt("Rock, Paper, or Scissors?");
-    return playerSelection;
+    const buttons = document.querySelectorAll('button');
+    let playerSelection = buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            console.log(button.id);
+        })
+    })
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -81,13 +85,9 @@ function declareOutcome() {
 
 function game() {
 
-const buttons = document.querySelectorAll('button');
 
-        let playerSelection = buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-                console.log(button.id);
-            })
-        })
+
+        let playerSelection = getPlayerSelection();
         let computerSelection = getComputerSelection();
         const results = playRound(playerSelection, computerSelection);
 
