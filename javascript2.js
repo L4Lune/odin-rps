@@ -24,35 +24,34 @@ function getPlayerSelection() {
         })
     }
 
-
 function playRound(playerSelection, computerSelection) {
-    let playerSelectionLower = playerSelection.toLowerCase();
-
-    if (playerSelectionLower === "rock" && computerSelection === "rock") {
+    
+    results = '';
+    if (playerSelection === "rock" && computerSelection === "rock") {
         results = "It's a tie!";
         return results;
-    } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
         results = "You Lose! Paper covers Rock!";
         return results;
-    } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
         results = "You Win! Rock beats Scissors!";
         return results;
-    } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
         results = "You Win! Paper covers Rock!";
         return results;
-    } else if (playerSelectionLower === "paper" && computerSelection === "paper") {
+    } else if (playerSelection === "paper" && computerSelection === "paper") {
         results = "It's a tie!";
         return results;
-    } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
         results = "You Lose! Scissors cut Paper";
         return results;
-    } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
         results = "You Lose! Rock crushes Scissors!";
         return results;
-    } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
         results = "You Win! Scissors cut Paper!";
         return results;
-    } else if (playerSelectionLower === "scissors" && computerSelection === "scissors")
+    } else if (playerSelection === "scissors" && computerSelection === "scissors")
         results = "It's a tie!";
         return results;
 }
