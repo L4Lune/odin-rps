@@ -80,9 +80,14 @@ function declareOutcome() {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
 
-        let playerSelection = getPlayerSelection();
+const buttons = document.querySelectorAll('button');
+
+        let playerSelection = buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                console.log(button.id);
+            })
+        })
         let computerSelection = getComputerSelection();
         const results = playRound(playerSelection, computerSelection);
 
@@ -93,6 +98,7 @@ function game() {
         keepScore(results);
     }
     declareOutcome();
-}
+
+
 
 game();
