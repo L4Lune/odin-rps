@@ -19,19 +19,11 @@ function getComputerSelection() {
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
-    button.addEventListener('click', playround(button.id, getComputerSelection()) => {
-        console.log(button.id);
+    button.addEventListener('click', () => {
+        playRound(button.id, getComputerSelection())
     });
 });
 
-
-function getPlayerSelection() {
-    let playerSelection = buttons.forEach((button) => {
-        button.addEventListener('click', playRound)
-            console.log(playerSelection);
-    return playerSelection;
-    });
-    }
 
 function playRound(playerSelection, computerSelection) {
 
