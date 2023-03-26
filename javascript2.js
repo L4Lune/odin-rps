@@ -59,9 +59,6 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "scissors" && computerSelection === "scissors")
         results = "It's a tie!";
         return results;
-    alert(results);
-    alert(playerSelection);
-    alert(computerSelection);
 }
 
 function keepScore(results) {
