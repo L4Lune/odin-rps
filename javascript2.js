@@ -32,6 +32,8 @@ function testEventListener(playerSelection, computerSelection) {
 function playRound(playerSelection, computerSelection) {
 
     results = '';
+    alert(playerSelection);
+    alert(computerSelection);
     if (playerSelection === "rock" && computerSelection === "rock") {
         results = "It's a tie!";
         return results;
