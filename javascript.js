@@ -18,31 +18,31 @@ function getComputerChoice() {
 }
 
 // Create a function that plays a single round of Rock, Paper, Scissors
-// Get the user input and store that value in a variable playerSelection
+// Get the user input and store that value in a variable button.id
 // Get the computers choice and store that value in a variable computerSelection
 // Create a conditional AND statement for all possible combinations of result and print a comment to the console
 
-function playRound(playerSelection, computerSelection) {
+function playRound(button.id, computerSelection) {
 
-    let playerSelectionLower = playerSelection.toLowerCase();
+    let button.idLower = button.id.toLowerCase();
 
-    if (playerSelectionLower === "rock" && computerSelection === "rock") {
+    if (button.idLower === "rock" && computerSelection === "rock") {
         return("It's a tie!");
-    } else if (playerSelectionLower === "rock" && computerSelection === "paper") {
+    } else if (button.idLower === "rock" && computerSelection === "paper") {
         return("You Lose! Paper beats Rock!");
-    } else if (playerSelectionLower === "rock" && computerSelection === "scissors") {
+    } else if (button.idLower === "rock" && computerSelection === "scissors") {
         return("You Win! Rock beats Scissors!");
-    } else if (playerSelectionLower === "paper" && computerSelection === "rock") {
+    } else if (button.idLower === "paper" && computerSelection === "rock") {
         return("You Win! Paper covers Rock!");
-    } else if (playerSelectionLower === "paper" && computerSelection === "paper") {
+    } else if (button.idLower === "paper" && computerSelection === "paper") {
         return("It's a tie!");
-    } else if (playerSelectionLower === "paper" && computerSelection === "scissors") {
+    } else if (button.idLower === "paper" && computerSelection === "scissors") {
         return("You Lose! Scissors cut Paper");
-    } else if (playerSelectionLower === "scissors" && computerSelection === "rock") {
+    } else if (button.idLower === "scissors" && computerSelection === "rock") {
         return("You Lose! Rock crushes Scissors!");
-    } else if (playerSelectionLower === "scissors" && computerSelection === "paper") {
+    } else if (button.idLower === "scissors" && computerSelection === "paper") {
         return("You Win! Scissors cut Paper!");
-    } else if (playerSelectionLower === "scissors" && computerSelection === "scissors")
+    } else if (button.idLower === "scissors" && computerSelection === "scissors")
         return("It's a tie!");
 }
 
@@ -52,10 +52,10 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock, Paper, or Scissors?");
+        let button.id = prompt("Rock, Paper, or Scissors?");
         let computerSelection = getComputerChoice();
         console.log(computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
+        console.log(playRound(button.id, computerSelection));
     }
 }
 

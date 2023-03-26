@@ -20,10 +20,14 @@ function getComputerSelection() {
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        playRound(button.id, getComputerSelection())
+        playRound(button.id, getComputerSelection());
     });
 });
 
+function testEventListener(playerSelection, computerSelection) {
+    alert(playerSelection);
+    alert(computerSelection);
+}
 
 function playRound(playerSelection, computerSelection) {
 
@@ -55,8 +59,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "scissors" && computerSelection === "scissors")
         results = "It's a tie!";
         return results;
-    console.log(results);
-    
+    alert(results);
 }
 
 function keepScore(results) {
