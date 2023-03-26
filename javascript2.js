@@ -29,6 +29,11 @@ function testEventListener(playerSelection, computerSelection) {
     alert(computerSelection);
 }
 
+// Add a div to display the results
+//const div = document.createElement('div');
+//div.setAttribute('id', 'leaderboard')
+// or should this div be made in the html then i can create a few other sub-divs like win, lose, tie
+
 function playRound(playerSelection, computerSelection) {
 
     results = '';
