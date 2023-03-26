@@ -60,6 +60,8 @@ function playRound(playerSelection, computerSelection) {
         results = "It's a tie!";
         return results;
     alert(results);
+    alert(playerSelection);
+    alert(computerSelection);
 }
 
 function keepScore(results) {
