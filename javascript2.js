@@ -25,6 +25,9 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         keepScore(results);
     });
+    button.addEventListener('click', () => {
+        declareOutcome();
+    })
 });
 
 function testEventListener(playerSelection, computerSelection) {
@@ -39,11 +42,7 @@ function playRound(playerSelection, computerSelection) {
     alert(playerSelection);
     alert(computerSelection);
 
-    if (win === 5) {
-        alert("You win!");
-    } else if (lose === 5) {
-        alert("You lose!");
-    }
+
     if (playerSelection === "rock" && computerSelection === "rock") {
         results = "It's a tie!";
         return results;
@@ -92,12 +91,12 @@ function keepScore(results) {
 }
 
 function declareOutcome() {
-    if (win > lose) {
-        console.log("YOU WON IT ALL!")
-    } else if (lose > win) {
-        console.log("YOU LOSE!")
-    } else { 
-        console.log("It's a tie game! Play a few more rounds!");
+    if (win === 5) {
+        alert("YOU WON IT ALL!")
+    } else if (lose === 5) {
+        alert("YOU LOSE!")
+    } else if (tie === 5) { 
+        alert("It's a tie game! Play a few more rounds!");
     }
 }
 
@@ -113,7 +112,7 @@ function game() {
         console.log(playRound(playerSelection, computerSelection));
         keepScore(results);
     }
-    declareOutcome();
+
 
 const leaderboard = document.querySelector("#leaderboard");
 
