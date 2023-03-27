@@ -106,3 +106,20 @@ function game() {
         keepScore(results);
     }
     declareOutcome();
+
+const leaderboard = document.querySelector("#leaderboard");
+
+const wins = document.createElement('p');
+wins.classList.add('wins');
+wins.textContent = `Wins: ${win}`;
+leaderboard.appendChild(wins);
+
+const loses = document.createElement('p');
+loses.classList.add('loses');
+loses.textContent = `Loses: ${lose}`;
+leaderboard.appendChild(loses);
+
+const ties = document.createElement('p');
+ties.classList.add('ties');
+ties.textContent = `Ties: ${tie}`;
+leaderboard.appendChild(ties);
