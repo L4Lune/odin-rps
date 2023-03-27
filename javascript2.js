@@ -22,6 +22,9 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playRound(button.id, getComputerSelection());
     });
+    button.addEventListener('click', () => {
+        keepScore(results);
+    });
 });
 
 function testEventListener(playerSelection, computerSelection) {
@@ -29,12 +32,12 @@ function testEventListener(playerSelection, computerSelection) {
     alert(computerSelection);
 }
 
+
 function playRound(playerSelection, computerSelection) {
 
     results = '';
     alert(playerSelection);
     alert(computerSelection);
-    alert(results);
 
     if (win === 5) {
         alert("You win!");
@@ -74,10 +77,13 @@ function keepScore(results) {
 
     if (results === "You Lose! Paper covers Rock!" || results === "You Lose! Scissors cut Paper" || results === "You Lose! Rock crushes Scissors!") {
         lose++; 
+        loses.textContent = `Loses: ${lose}`;
     } else if (results === "You Win! Rock beats Scissors!" || results === "You Win! Paper covers Rock!" || results === "You Win! Scissors cut Paper!") {
         win++;
+        wins.textContent = `Wins: ${win}`;
     } else if (results === "It's a tie!") {
         tie++;
+        ties.textContent = `Ties: ${tie}`;
     }
 
     console.log("You won: " + win);
