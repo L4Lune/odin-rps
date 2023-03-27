@@ -30,18 +30,12 @@ buttons.forEach((button) => {
     })
 });
 
-function testEventListener(playerSelection, computerSelection) {
-    alert(playerSelection);
-    alert(computerSelection);
-}
-
-
 function playRound(playerSelection, computerSelection) {
 
     results = '';
-    alert(playerSelection);
-    alert(computerSelection);
-
+    const youPlayed = document.createElement('p')
+    youPlayed.textContent = ("You played " + playerSelection + " and the computer played " + computerSelection); 
+    leaderboard.appendChild(youPlayed);
 
     if (playerSelection === "rock" && computerSelection === "rock") {
         results = "It's a tie!";
@@ -77,12 +71,21 @@ function keepScore(results) {
     if (results === "You Lose! Paper covers Rock!" || results === "You Lose! Scissors cut Paper" || results === "You Lose! Rock crushes Scissors!") {
         lose++; 
         loses.textContent = `Loses: ${lose}`;
+        const loseDisplay = document.createElement('p');
+        loseDisplay.textContent = `${results}`;
+        leaderboard.appendChild(loseDisplay);
     } else if (results === "You Win! Rock beats Scissors!" || results === "You Win! Paper covers Rock!" || results === "You Win! Scissors cut Paper!") {
         win++;
         wins.textContent = `Wins: ${win}`;
+        const winDisplay = document.createElement('p');
+        winDisplay.textContent = `${results}`;
+        leaderboard.appendChild(winDisplay);
     } else if (results === "It's a tie!") {
         tie++;
         ties.textContent = `Ties: ${tie}`;
+        const tieDisplay = document.createElement('p');
+        tieDisplay.textContent = `${results}`;
+        leaderboard.appendChild(tieDisplay);
     }
 
     console.log("You won: " + win);
@@ -92,11 +95,18 @@ function keepScore(results) {
 
 function declareOutcome() {
     if (win === 5) {
-        alert("YOU WON IT ALL!")
+        const winAnnounce = document.createElement('p');
+        winAnnounce.textContent = 'YOU WON IT ALL!';
+        leaderboard.appendChild(winAnnounce);
+        
     } else if (lose === 5) {
-        alert("YOU LOSE!")
+        const loseAnnounce = document.createElement('p');
+        loseAnnounce.textContent = 'YOU LOST IT ALL!';
+        leaderboard.appendChild(loseAnnounce);
     } else if (tie === 5) { 
-        alert("It's a tie game! Play a few more rounds!");
+        const tieAnnounce = document.createElement('p');
+        tieAnnounce.textContent = 'YOU TIED! PLAY AGAIN';
+        leaderboard.appendChild(tieAnnounce);
     }
 }
 
